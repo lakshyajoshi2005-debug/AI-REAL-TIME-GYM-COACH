@@ -1,0 +1,195 @@
+
+/*GLOBAL THEME*/
+
+.stApp{
+    background:#0A0D14;
+    color:#fff;
+}
+
+[data-testid="stSidebar"]{
+    background:#111520;
+}
+
+
+/*TYPOGRAPHY*/
+
+.block-container,
+.block-container *{
+    font-family:'Inter',sans-serif !important;
+}
+
+
+/*LAYOUT*/
+
+.block-container{
+    padding:50px 3rem !important;
+    max-width:750px !important;
+}
+
+
+/*BUTTONS*/
+
+.stButton button,
+.stDownloadButton button,
+.MuiBox-root button,
+[data-testid="stFormSubmitButton"] button{
+    background:#181D2A !important;
+    color:#fff !important;
+    border:1px solid rgba(255,255,255,.08) !important;
+    border-radius:0 !important;
+}
+
+[data-testid="stFormSubmitButton"] button:hover{
+    background:#242B3A !important;
+}
+
+
+/*INPUTS AND TEXT ELEMENTS*/
+
+input,
+textarea,
+p,
+li,
+code,
+[data-testid="stSelectbox"]>div>div,
+[data-baseweb="select"]>div,
+[data-baseweb="popover"]>ul,
+[data-baseweb="menu"]{
+    border-radius:0 !important;
+}
+
+[data-testid="stTextInput"] input,
+[data-baseweb="select"]>div,
+[data-testid="stNumberInput"] input{
+    background:#222735 !important;
+    color:#fff !important;
+    border:none !important;
+}
+
+[data-testid="stNumberInput"] button{
+    background:#222735 !important;
+    color:#fff !important;
+    border:none !important;
+}
+
+[data-testid="stTextInput"] input::placeholder{
+    color:#8b93a7 !important;
+}
+
+[data-testid="stTextInput"] label{
+    color:#fff !important;
+}
+
+
+/*STREAMLIT 1.54 DROPDOWN*/
+
+[data-baseweb="popover"],
+ul[role="listbox"],
+li[role="option"]{
+    background:#181D2A !important;
+}
+
+[data-baseweb="popover"]{
+    border:1px solid rgba(255,255,255,.08) !important;
+}
+
+li[role="option"]{
+    color:#fff !important;
+}
+
+li[role="option"]:hover{
+    background:#242B3A !important;
+}
+
+li[aria-selected="true"]{
+    background:#2D3548 !important;
+}
+
+
+/*METRICS*/
+
+[data-testid="stMetric"]{
+    background:#181D2A;
+    border:1px solid rgba(255,255,255,.08);
+    padding:1rem 1.2rem;
+    border-radius:0;
+}
+
+[data-testid="stMetric"] div{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+[data-testid="stMetricValue"]{
+    font-size:1.5rem !important;
+    font-weight:400 !important;
+}
+
+[data-testid="stMetricLabel"]{
+    font-size:15px !important;
+    opacity:.6;
+}
+
+[data-testid="stMetric"] div label p{
+    font-size:16px !important;
+}
+
+
+/*CONTAINERS AND CARDS*/
+
+.stContainer,
+.stExpander,
+.stTabs,
+.stColumns,
+.stPopover,
+.stAlertContainer,
+.stStatusContainer,
+.stMetric,
+.stTable,
+.stDataframe,
+.stForm,
+.stSelectbox,
+[data-baseweb="select"]>div,
+[data-testid="stForm"],
+[data-testid="stMetric"],
+[data-testid="stNumberInputContainer"],
+[data-testid="stDataFrameColumnMenu"],
+[data-testid="stHeadingWithActionElements"],
+[data-testid="stCaptionContainer"] p,
+[data-testid="stAlertContentInfo"] p,
+[data-testid="stSidebarNavLink"],
+[data-testid="stMarkdownContainer"] h3,
+[data-baseweb="popover"],
+[data-baseweb="menu"],
+div[role="menu"],
+div[role="menuitem"]{
+    border-radius:0 !important;
+}
+
+
+/*DATAFRAME*/
+
+.stDataframe,
+.stDataframe div,
+.stDataframeGlideDataEditor{
+    border-radius:0 !important;
+}
+
+
+/*MARKDOWN*/
+
+[data-testid="stMarkdownContainer"] strong{
+    font-family:'Inter',sans-serif !important;
+}
+
+
+/*FORM*/
+
+.stForm{
+    margin-top:2rem !important;
+    padding:1.5rem 1rem !important;
+    background:#181D2A !important;
+    border:1px solid rgba(255,255,255,.08) !important;
+    color:#fff;
+}

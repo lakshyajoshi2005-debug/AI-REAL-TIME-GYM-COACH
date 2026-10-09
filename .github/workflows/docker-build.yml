@@ -1,0 +1,33 @@
+name: GYM Coach - Docker Build
+
+# Code master branch par push ho ya manually run karein, tab workflow chalega
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  docker-build:
+    # Job GitHub ke Ubuntu runner par chalegi
+    runs-on: ubuntu-latest
+
+    steps:
+      # GitHub repository ka code runner par download karega
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # Docker image build karne ke liye Buildx setup karega
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      # Dockerfile use karke image build karega, lekin publish nahi karega
+      - name: Build Docker image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: ai-gym-coach:latest

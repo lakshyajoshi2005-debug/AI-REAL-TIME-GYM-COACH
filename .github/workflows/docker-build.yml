@@ -1,6 +1,6 @@
-name: GYM Coach - Docker Build
 
-# Code master branch par push ho ya manually run karein, tab workflow chalega
+name: GYM Coach - Docker Build and Publish
+
 on:
   push:
     branches: ["master"]
@@ -11,23 +11,25 @@ permissions:
 
 jobs:
   docker-build:
-    # Job GitHub ke Ubuntu runner par chalegi
     runs-on: ubuntu-latest
 
     steps:
-      # GitHub repository ka code runner par download karega
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      # Docker image build karne ke liye Buildx setup karega
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
 
-      # Dockerfile use karke image build karega, lekin publish nahi karega
-      - name: Build Docker image
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
         uses: docker/build-push-action@v7
         with:
           context: .
           file: ./Dockerfile
-          push: false
-          tags: ai-gym-coach:latest
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ai-gym-coach:latest
